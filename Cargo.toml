@@ -11,3 +11,6 @@ build = "build.rs"
 
 [build-dependencies]
 bindgen = "0.53.2"
+
+[patch.crates-io]
+bindgen = { git = "https://github.com/agausmann/rust-bindgen.git", branch = "patch/emscripten-rs" }
