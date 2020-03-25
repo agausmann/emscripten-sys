@@ -3,8 +3,6 @@ extern crate bindgen;
 use std::env;
 use std::path::Path;
 
-use bindgen::RustTarget;
-
 fn main() {
     let out_dir = env::var("OUT_DIR").expect("failed to get envvar OUT_DIR");
     let emsdk_dir = env::var("EMSDK").expect("failed to get envvar EMSDK");
@@ -17,7 +15,6 @@ fn main() {
         .whitelist_type(whitelist)
         .whitelist_function(whitelist)
         .whitelist_var(whitelist)
-        .rust_target(RustTarget::Stable_1_40)
         .use_core()
         .clang_arg(format!(
             "-I{}/upstream/emscripten/system/include",
