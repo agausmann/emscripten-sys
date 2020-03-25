@@ -9,7 +9,7 @@ fn main() {
     let out_dir = env::var("OUT_DIR").expect("failed to get envvar OUT_DIR");
     let emsdk_dir = env::var("EMSDK").expect("failed to get envvar EMSDK");
 
-    let whitelist = "^_?em_|^_?emscripten_|^_?EM_|^_?EMSCRIPTEN_";
+    let whitelist = "_?em_.*|_?emscripten_.*|_?EM_.*|_?EMSCRIPTEN_.*";
 
     let builder = bindgen::builder()
         .header("etc/emscripten.h")
